@@ -106,9 +106,10 @@
         const passwordInput = document.getElementById('passwordInput');
         const accessButton = document.getElementById('accessButton');
         const correctPassword = '241102';
+        const passwordPublic = 'isalinda'
 
         accessButton.addEventListener('click', () => {
-            if (passwordInput.value === correctPassword) {
+            if (passwordInput.value === correctPassword || passwordInput.value === passwordPublic) {
                 window.location.href = 'tradutor-menu.html';
             } else {
                 alert('Senha incorreta. Tente novamente.');
