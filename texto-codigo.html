@@ -58,6 +58,11 @@
             align-items: center;
             justify-content: space-between;
             width: 100%;
+
+        }
+
+        li {
+            list-style: none;
         }
 
         .menu {
@@ -91,6 +96,20 @@
         a:hover {
             background-color: #ff4f4f;
         }
+
+        #btn-lucas {
+            background-color: rgb(29, 188, 232);
+        }
+
+        #btn-isa {
+            background-color: rgb(237, 92, 148);
+        }
+
+        #voltar {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
     </style>
 </head>
 
@@ -102,13 +121,21 @@
 
         <nav>
             <ul class="menu">
-                <li><a href="./tradutor-menu.html">Voltar</a></li>
+                Enviar para:
+                <li><a id="btn-lucas" href="">Lucas</a></li>
+                ou
+                <li><a id="btn-isa" href="">Isa</a></li>
+                <li><a id="voltar" href="./tradutor-menu.html">Voltar</a></li>
             </ul>
         </nav>
     </div>
+
     <script>
         const codeInput = document.getElementById('codeInput');
         const translatedOutput = document.getElementById('translatedOutput');
+        const lucas_btn = document.getElementById('btn-lucas')
+        const isa_btn = document.getElementById('btn-isa')
+
 
         function translateCode() {
             const code = codeInput.value.toUpperCase();
@@ -142,6 +169,9 @@
             }
 
             translatedOutput.innerHTML = translatedText;
+            isa_btn.href = `https://wa.me/5511977599279/text=${translatedText}`
+            lucas_btn.href = `https://wa.me/5511942022180/text=${translatedText}`
+
         }
 
         function translateWord(word, translationMap) {
